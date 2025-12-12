@@ -23,13 +23,18 @@ p {
 }
 
 
-a    {
+a {
     color: white;
     text-decoration: none;
     font-size: 20px;
     font-family: "starborn";
 }
 
+ul {
+    color: white;
+    font-size: 20px;
+    font-family: "vanilla";
+}
 
 
 header {
@@ -125,6 +130,28 @@ body {
     float: left;
     margin: 10px;
     padding: 10px;
+}
+
+.tofix {
+    display: flex; /* puts everything in one line */
+    justify-content: space-between;
+}
+
+.two {
+    display: block; /* puts everything in one line */
+    justify-content: space-between;
+}
+
+#marcuspic {
+    float: left;
+    height: 300px;
+    width: 150px;
+}
+
+#violetpic {
+    float: left;
+    height: 300px;
+    width: 150px;
 }
 
 
