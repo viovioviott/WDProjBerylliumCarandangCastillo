@@ -1,0 +1,21 @@
+.tofix {
+    display: flex;
+    align-items: flex-start;
+}
+
+.two {
+    display: flex; /* puts everything in one line */
+    flex-direction: column;
+    text-align: left;
+}
+
+#marcuspic,
+ #violetpic {
+    display: flex; 
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+}

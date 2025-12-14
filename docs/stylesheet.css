@@ -137,29 +137,6 @@ body {
     padding: 10px;
 }
 
-.tofix {
-    display: flex; /* puts everything in one line */
-    justify-content: space-between;
-}
-
-.two {
-    display: block; /* puts everything in one line */
-    justify-content: space-between;
-}
-
-#marcuspic {
-    float: left;
-    height: 300px;
-    width: 150px;
-}
-
-#violetpic {
-    float: left;
-    height: 300px;
-    width: 150px;
-}
-
-
 
 
 footer {
