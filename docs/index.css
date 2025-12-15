@@ -1,3 +1,6 @@
+p {
+    font-size: 20px;
+}
 
 .headerer {
     display: grid;
@@ -44,9 +47,25 @@
 
 .funs {
     font-family: "vanilla";
-    font-size: 16px;
+    font-size: 20px;
     }
 
 .funs:hover {
     color: rgb(124, 121, 193);
 }
+
+.bigImage {
+    float: left;
+    width: 30%;
+    height: 10%
+}
+
+div.cont {
+    display: flexbox;
+    align-items: center;
+}
+
+.midImage {
+    display: flex;
+}
+

@@ -3,9 +3,19 @@
     src: url(fonts/Starborn.woff), format('woff');
   }
   
-  @font-face {
+@font-face {
     font-family: "vanilla";
     src: url(fonts/Vanilla\ Caramel.otf), format('opentype');
+  }
+
+@font-face {
+    font-family: "babydoll";
+    src: url(fonts/Baby\ Doll.ttf), format('truetype');
+  }
+
+@font-face {
+    font-family: "molly";
+    src: url(fonts/KGLoveMolly.ttf), format('truetype');
   }
 
 h1, h2, h3, h4, h5, h6, p {
