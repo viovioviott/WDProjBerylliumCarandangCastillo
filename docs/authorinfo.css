@@ -1,6 +1,7 @@
 .tofix {
     display: flex;
     align-items: flex-start;
+    width: 50%
 }
 
 .two {

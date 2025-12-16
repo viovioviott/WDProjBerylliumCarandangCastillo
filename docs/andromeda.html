@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8   ">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="stylesheet.css">
@@ -8,6 +8,29 @@
 
     <title>Polaris</title>
     <link rel="icon" type="image/ico" href="images/favicon.ico?v=2">
+
+    <style>
+        #text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        img#diagram {
+            width: 20%;
+            height: 20%;
+            border-radius: 25px; 
+            display: flex;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        #andromeda {
+            width: 100%;
+            height: 10%;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +39,7 @@
             <div>
                 <img id="icon" src="images/polarislogo.png" alt="Polaris Logo"> 
             </div>
-        <a style="font-size: 40px;" style="font-family: starborn"; href="index.html">POLARIS</a>
+        <a style="font-size: 40px;" href="index.html">POLARIS</a>
         <p style="font-size: 20px;">A Guide to the Stars</p>
         </section>
         
@@ -36,13 +59,26 @@
 
     <section class="actualPolaris">
         <div id="polaris">
-            <img id="placeholder" src="images/placeholder.jpeg" alt="placeholder"> 
-            <p>Once the user has clicked “Play” on the main menu, and has entered the actual simulation, the sky of the epoch January 1, 2000 at 12:00 AM (UTC) in the location Latitude: 0, Longitude: 0 will be displayed. From there you may input in the top left corner of the software what date, time, and location you would like to simulate.</p>
-            <p>To move the camera, you can use the W and S keys to move the camera up and down. You may use the A and D keys to move it left or right respectively, and you may use the up and down arrow keys to zoom in and zoom out respectively as well. You may hover over the objects in the sky to reveal information about them such as their orbital elements, their distance from Earth, parallax, magnitude, alt-az coordinates, etc.</p>
-            <p>On the bottom left are the options for adjusting the atmospheric conditions, toggling the guides/lines as well as the actual constellation lines/boundaries. </p>
-            <p>On the top right of the screen, you may type in the search bar to look for certain celestial bodies, and to the right of that still is the settings button where one can adjust the camera/telescope settings, as well as find view the credits that the developers used in making the app. </p>
-        </div>
+            <img id="andromeda" src="webImages/04_Andromeda.jpg" alt="placeholder"> 
+            <!--right now po this image is just a placeholder as our actual project is not uhm working..-->
+        <div id="text">
+            <h3>Andromeda Constellation</h3>
+            <p>The Andromeda Constellation was already a well known constellation among the ancient peoples such as the Greeks. They named it after their mythological princess named Andromeda, and it was also among one of the 48 constellations recorded by Ptolemy in his “The Almagest. The myth of Andromeda was of a beautiful princess of her father, King Cepheus. When King Cepheus’ kingdom was in danger of being destroyed by the god Poseidon, her parents had attempted to sacrifice their daughter in order to save their kingdom. Fortunately, the prince Perseus spotted the princess in danger on his flying horse: the Pegasus, and by the nick of luck had saved her from imminent danger, living happily ever after. In the Northern Hemisphere, Andromeda, seen as a figure with open arms can be observed from August to February, meanwhile in the Southern Hemisphere, it would be visible instead from October to December.</p>
+            <img id="diagram" src="https://storage.noirlab.edu/media/archives/images/screen/and.jpg">
+            <br>
 
+            <h4>Alpha Andromeda</h4>
+            <p>There only exist a few stars within Andromeda’s boundaries with an apparent magnitude higher than 3.00. Among these, Alpheratz or α Andromeda, is the brightest “star” in the constellation, with it actually being composed of two other stars which form a “binary system”. The bigger and smaller stars are 200x and 10x brighter than our Sun respectively!</p>
+        
+            <h4>Mirach</h4>
+            <p>Forming the left hip of the figure of princess Andromeda, scientists calculate this star to be 1900 times brighter than the Sun, yet it appears to be dimmer than the previously mentioned Alpha Andromeda binary system, due to it being at a distance 200 light years away from Earth.</p>
+            <img id="diagram" src="https://cdn.mos.cms.futurecdn.net/i7fbeD3tzQsdQdd2ZKQq8d-970-80.jpg">
+            
+            <h4>Andromeda Galaxy</h4>
+            <p>Also found in the Andromeda Constellation is the famous Andromeda Galaxy, our galaxy's closest other major galaxy! It can be found at the right side of the star Mirach.</p>
+            <img id="diagram" src="https://storage.noirlab.edu/media/archives/images/wallpaper2/noao-m31fsqblock.jpg">
+        </div>
+        </div>`
 
         <aside id="dropboxes">
             <div id="view"><h2>View By Object</h2></div>
@@ -274,7 +310,6 @@
 
 
 
-    <hr>
     <footer>
         <div class="content">
             <p>2025-2026</p>
