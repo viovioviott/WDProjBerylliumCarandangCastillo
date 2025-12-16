@@ -36,15 +36,14 @@ aside#dropboxes {
 }
 
 
-
 .dropbtn {
     border: 2px solid #ffffff;
-    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 70%;
+    background-image: linear-gradient(to bottom, #3f3a99, #29257c);
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin: 2px auto;
 
     color: white;
     font-family: starborn;
@@ -58,14 +57,22 @@ aside#dropboxes {
   background-color: #514da4;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
-
 .dropdown-content {
-    outline-color: white;
-    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+    border: white;
+    background: transparent;
 
     display: none;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    margin: 2px auto;
+    width: 80%;
+    max-height: 160px;
+    overflow-y: auto; 
+
+    border-radius: 20px;
+    z-index: 1000;
 }
 
 .dropdown-content a {
@@ -75,14 +82,40 @@ aside#dropboxes {
     display: block;
 }
 
+.drpdwnbutton {
+    display: block;
+    margin: 3px auto;
+    padding: 12px 18px;
+
+    width: 80%;
+    height: 20%;
+    text-align: center;
+
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    font-size: 20px;
+}
+
 .show {display:block;}
+
+.searchbar {
+    font-family: vanilla;
+}
+
+.dropdown-content a:hover {background-color: #1d1a58;}
 
 
 
 .dropbtn2 {
     border: 2px solid #ffffff;
-    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 70%;
+    background-image: linear-gradient(to bottom, #3f3a99, #29257c);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto;
 
     color: white;
     font-family: starborn;
@@ -92,12 +125,26 @@ aside#dropboxes {
     cursor: pointer;
 }
 
+.dropbtn2:hover, .dropbtn2:focus {
+  background-color: #514da4;
+}
+
 .dropdown-content2 {
-    outline-color: white;
-    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+    border: white;
+    background: transparent;
 
     display: none;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    margin: 2px auto;
+    width: 80%;
+    max-height: 160px;
+    overflow-y: auto; 
+
+    border-radius: 20px;
+    z-index: 1000;
 }
 
 .dropdown-content2 a {
@@ -107,14 +154,42 @@ aside#dropboxes {
     display: block;
 }
 
+.drpdwnbutton2 {
+    display: block;
+
+    margin: 3px auto;
+    padding: 12px 18px;
+
+    width: 80%;
+    height: 20%;
+    text-align: center;
+
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    font-size: 20px;
+}
 
 .show2 {display:block;}
+
+.searchbar2 {
+    font-family: vanilla;
+}
+
+.dropdown2-content a:hover {background-color: #1d1a58;}
+
+
 
 
 .dropbtn3 {
     border: 2px solid #ffffff;
-    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 70%;
+    background-image: linear-gradient(to bottom, #3f3a99, #29257c);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto;
 
     color: white;
     font-family: starborn;
@@ -124,12 +199,25 @@ aside#dropboxes {
     cursor: pointer;
 }
 
+.dropbtn3:hover, .dropbtn3:focus {
+  background-color: #514da4;
+}
+
 .dropdown-content3 {
-    outline-color: white;
+    border: white;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
 
     display: none;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2px auto;
+    width: 80%;
+    max-height: 160px;
+    overflow-y: auto; 
+
+    border-radius: 20px;
+    z-index: 1000;
 }
 
 .dropdown-content3 a {
@@ -139,13 +227,42 @@ aside#dropboxes {
     display: block;
 }
 
+.drpdwnbutton3 {
+    display: block;
+
+    margin: 3px auto;
+    padding: 12px 18px;
+
+    width: 80%;
+    height: 20%;
+    text-align: center;
+
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    font-size: 20px;
+}
+
 .show3 {display:block;}
+
+.searchbar3 {
+    font-family: vanilla;
+}
+
+.dropdown3-content a:hover {background-color: #1d1a58;}
+
+
 
 
 .dropbtn4 {
     border: 2px solid #ffffff;
-    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 70%;
+    background-image: linear-gradient(to bottom, #3f3a99, #29257c);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto;
 
     color: white;
     font-family: starborn;
@@ -155,12 +272,25 @@ aside#dropboxes {
     cursor: pointer;
 }
 
+.dropbtn4:hover, .dropbtn4:focus {
+  background-color: #514da4;
+}
+
 .dropdown-content4 {
-    outline-color: white;
+    border: white;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
 
     display: none;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2px auto;
+    width: 80%;
+    max-height: 160px;
+    overflow-y: auto; 
+
+    border-radius: 20px;
+    z-index: 1000;
 }
 
 .dropdown-content4 a {
@@ -170,4 +300,27 @@ aside#dropboxes {
     display: block;
 }
 
+.drpdwnbutton4 {
+    display: block;
+
+    margin: 3px auto;
+    padding: 12px 18px;
+
+    width: 80%;
+    height: 20%;
+    text-align: center;
+
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    font-size: 20px;
+}
+
 .show4 {display:block;}
+
+.searchbar4 {
+    font-family: vanilla;
+}
+
+.dropdown4-content a:hover {background-color: #1d1a58;}
