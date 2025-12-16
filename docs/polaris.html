@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="polaris.css">
 
     <title>Polaris</title>
     <link rel="icon" type="image/ico" href="images/favicon.ico?v=2">
@@ -39,42 +39,139 @@
             <img id="placeholder" src="images/placeholder.jpeg" alt="placeholder"> 
         </div>
 
-        <div id="dropboxes">
+        <aside id="dropboxes">
+            <div id="view"><h2>View By Object</h2></div>
             <button onclick="myFunction()" class="dropbtn">Constellations</button>
             <div id="myDropdown" class="dropdown-content" >
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
                 <a href="#">"insert constellation name"</a>
                 <a href="#">"insert constellation name"</a>
                 <a href="#">"insert constellation name"</a>
                 <a href="#">"insert constellation name"</a>
             </div>
 
-            <button onclick="myFunction()" class="dropbtn">Planets</button>
-            <div id="myDropdown" class="dropdown-content" >
-                <a href="#">"insert planet name"</a>
-                <a href="#">"insert planet name"</a>
-                <a href="#">"insert planet name"</a>
-                <a href="#">"insert planet name"</a>
+            <script>
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+    
+                function filterFunction() {
+                    const input = document.getElementById("myInput");
+                    const filter = input.value.toUpperCase();
+                    const div = document.getElementById("myDropdown");
+                    const a = div.getElementsByTagName("a");
+                        for (let i = 0; i < a.length; i++) {
+                            txtValue = a[i].textContent || a[i].innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = "";
+                                } else {
+                                a[i].style.display = "none";
+                                }
+                        }
+                }
+    
+            </script>
+
+
+            <button onclick="myFunction2()" class="dropbtn2">Planets</button>
+            <div id="myDropdown2" class="dropdown-content2" >
+                <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()">
+                <a href="#">"insert name"</a>
+                <a href="#">"insert name"</a>
+                <a href="#">"insert name"</a>
+                <a href="#">"insert name"</a>
             </div>
 
-            <button onclick="myFunction()" class="dropbtn">Comets & Asteroids</button>
-            <div id="myDropdown" class="dropdown-content" >
+            <script>
+                function myFunction2() {
+                    document.getElementById("myDropdown2").classList.toggle("show2");
+                }
+    
+                function filterFunction2() {
+                    const input = document.getElementById("myInput2");
+                    const filter = input.value.toUpperCase();
+                    const div = document.getElementById("myDropdown2");
+                    const a = div.getElementsByTagName("a");
+                        for (let i = 0; i < a.length; i++) {
+                            txtValue = a[i].textContent || a[i].innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = "";
+                                } else {
+                                a[i].style.display = "none";
+                                }
+                        }
+                }
+    
+            </script>
+
+
+            <button onclick="myFunction3()" class="dropbtn3">Comets & Asteroids</button>
+            <div id="myDropdown3" class="dropdown-content3" >
+                <input type="text" placeholder="Search.." id="myInput3" onkeyup="filterFunction3()">
                 <a href="#">"insert name"</a>
                 <a href="#">"insert name"</a>
                 <a href="#">"insert name"</a>
                 <a href="#">"insert name"</a>
             </div>
 
-            <button onclick="myFunction()" class="dropbtn">Satellites</button>
-            <div id="myDropdown" class="dropdown-content" >
+            <script>
+                function myFunction3() {
+                    document.getElementById("myDropdown3").classList.toggle("show3");
+                }
+
+                function filterFunction3() {
+                    const input = document.getElementById("myInput3");
+                    const filter = input.value.toUpperCase();
+                    const div = document.getElementById("myDropdown3");
+                    const a = div.getElementsByTagName("a");
+                        for (let i = 0; i < a.length; i++) {
+                            txtValue = a[i].textContent || a[i].innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = "";
+                                } else {
+                                a[i].style.display = "none";
+                                }
+                        }
+                }
+
+            </script>
+
+
+            <button onclick="myFunction4()" class="dropbtn4">Satellites</button>
+            <div id="myDropdown4" class="dropdown-content4" >
+                <input type="text" placeholder="Search.." id="myInput4" onkeyup="filterFunction4()">
                 <a href="#">"insert name"</a>
                 <a href="#">"insert name"</a>
                 <a href="#">"insert name"</a>
                 <a href="#">"insert name"</a>
             </div>
-        </div>
+
+            <script>
+                function myFunction4() {
+                    document.getElementById("myDropdown4").classList.toggle("show4");
+                }
+
+                function filterFunction4() {
+                    const input = document.getElementById("myInput4");
+                    const filter = input.value.toUpperCase();
+                    const div = document.getElementById("myDropdown4");
+                    const a = div.getElementsByTagName("a");
+                        for (let i = 0; i < a.length; i++) {
+                            txtValue = a[i].textContent || a[i].innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = "";
+                                } else {
+                                a[i].style.display = "none";
+                                }
+                        }
+                }
+
+            </script>
+        </aside>
+
+
 
     </section>
-
 
 
 

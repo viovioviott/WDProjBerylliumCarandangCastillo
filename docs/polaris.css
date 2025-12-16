@@ -1,9 +1,128 @@
-div#dropboxes {
-    width: 500px;
-    height: 
+.actualPolaris {
+    display: flex;
+    align-items: flex-start;
+    width: cover;
+    height: auto;
+}
+
+#polaris {
+    width: 70%;
+}
+
+#placeholder {
+    width: 100%;
+    height: 50%;
+    margin: 10px;
+}
+
+aside#dropboxes {
+    outline-color: white;
+    width: 45%;
+    height: 100%;
 }
 
 .dropbtn {
+    outline-color: white;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 
+    width: 100%;
+    color: white;
+    font-family: starborn;
 }
+
+.dropdown-content {
+    outline-color: white;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+
+    display: none;
+    justify-content: center;
+}
+
+.dropdown-content a {
+    color: white;
+    font-family: vanilla;
+    text-decoration: none;
+    display: block;
+}
+
+.show {display:block;}
+
+
+
+.dropbtn2 {
+    outline-color: white;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+    width: 100%;
+    color: white;
+    font-family: starborn;
+}
+
+.dropdown-content2 {
+    outline-color: white;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+
+    display: none;
+    justify-content: center;
+}
+
+.dropdown-content2 a {
+    color: white;
+    font-family: vanilla;
+    text-decoration: none;
+    display: block;
+}
+
+
+.show2 {display:block;}
+
+
+.dropbtn3 {
+    outline-color: white;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+    width: 100%;
+    color: white;
+    font-family: starborn;
+}
+
+.dropdown-content3 {
+    outline-color: white;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+
+    display: none;
+    justify-content: center;
+}
+
+.dropdown-content3 a {
+    color: white;
+    font-family: vanilla;
+    text-decoration: none;
+    display: block;
+}
+
+.show3 {display:block;}
+
+
+.dropbtn4 {
+    outline-color: white;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+    width: 100%;
+    color: white;
+    font-family: starborn;
+}
+
+.dropdown-content4 {
+    outline-color: white;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+
+    display: none;
+    justify-content: center;
+}
+
+.dropdown-content4 a {
+    color: white;
+    font-family: vanilla;
+    text-decoration: none;
+    display: block;
+}
+
+.show4 {display:block;}
+
