@@ -54,18 +54,36 @@ p {
     color: rgb(124, 121, 193);
 }
 
+.mainCont {
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 30px;
+    width: 500px;
+    height: 500px;
+}
+
 .bigImage {
-    float: left;
-    width: 30%;
-    height: 10%
+    display: block;
+    width: 500px;
+    height: 250px;
+    margin: auto;
+    border-radius: 25px; 
 }
 
 div.cont {
-    display: flexbox;
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
 }
 
 .midImage {
-    display: flex;
+    display: flex; 
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    margin-right: 10px;
+    border-radius: 25px; 
 }
 
