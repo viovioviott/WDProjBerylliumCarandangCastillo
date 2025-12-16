@@ -3,6 +3,7 @@
     align-items: flex-start;
     width: cover;
     height: auto;
+    margin: 20px;
 }
 
 #polaris {
@@ -16,7 +17,11 @@
 }
 
 aside#dropboxes {
-    outline-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 2px solid #ffffff;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
     width: 45%;
     height: 100%;
@@ -33,14 +38,27 @@ aside#dropboxes {
 
 
 .dropbtn {
-    outline-color: white;
+    border: 2px solid #ffffff;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 80%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    margin-left: auto;
+
     color: white;
     font-family: starborn;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
 }
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #514da4;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown-content {
     outline-color: white;
@@ -62,11 +80,16 @@ aside#dropboxes {
 
 
 .dropbtn2 {
-    outline-color: white;
+    border: 2px solid #ffffff;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 100%;
+    width: 70%;
+
     color: white;
     font-family: starborn;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .dropdown-content2 {
@@ -89,11 +112,16 @@ aside#dropboxes {
 
 
 .dropbtn3 {
-    outline-color: white;
+    border: 2px solid #ffffff;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 100%;
+    width: 70%;
+
     color: white;
     font-family: starborn;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .dropdown-content3 {
@@ -115,11 +143,16 @@ aside#dropboxes {
 
 
 .dropbtn4 {
-    outline-color: white;
+    border: 2px solid #ffffff;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
-    width: 100%;
+    width: 70%;
+
     color: white;
     font-family: starborn;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .dropdown-content4 {

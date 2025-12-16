@@ -43,11 +43,14 @@
             <div id="view"><h2>View By Object</h2></div>
             <button onclick="myFunction()" class="dropbtn">Constellations</button>
             <div id="myDropdown" class="dropdown-content" >
-                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                <a href="#">"insert constellation name"</a>
-                <a href="#">"insert constellation name"</a>
-                <a href="#">"insert constellation name"</a>
-                <a href="#">"insert constellation name"</a>
+                <div class="overflow">
+                    <select name="select1" onmousedown="if(this.options.length>8){this.size=5;}" onchange='this.size=0;' onblur="this.size=0;"></select>
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#">"insert constellation name"</a>
+                    <a href="#">"insert constellation name"</a>
+                    <a href="#">"insert constellation name"</a>
+                    <a href="#">"insert constellation name"</a>
+                </div>
             </div>
 
             <script>

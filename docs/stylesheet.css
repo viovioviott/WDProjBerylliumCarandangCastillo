@@ -89,6 +89,10 @@ header {
     flex-wrap: wrap;
 }
 
+.nav a:active {
+    transform: translateY(4px);
+}
+
 .intro h4,
 .intro p {
     margin: 0;
