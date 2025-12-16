@@ -17,14 +17,10 @@
 }
 
 aside#dropboxes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
     border: 2px solid #ffffff;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
     width: 45%;
-    height: 100%;
+    height: 100vh;
     margin-right: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -32,7 +28,10 @@ aside#dropboxes {
 }
 
 #view {
-    margin: 5px;
+    margin-bottom: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 18px; 
+
 }
 
 
@@ -51,6 +50,10 @@ aside#dropboxes {
     padding: 16px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.dropbtn:active {
+    transform: translateY(4px);
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -123,6 +126,10 @@ aside#dropboxes {
     padding: 16px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.dropbtn2:active {
+    transform: translateY(4px);
 }
 
 .dropbtn2:hover, .dropbtn2:focus {
@@ -199,6 +206,10 @@ aside#dropboxes {
     cursor: pointer;
 }
 
+.dropbtn3:active {
+    transform: translateY(4px);
+}
+
 .dropbtn3:hover, .dropbtn3:focus {
   background-color: #514da4;
 }
@@ -270,6 +281,10 @@ aside#dropboxes {
     padding: 16px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.dropbtn4:active {
+    transform: translateY(4px);
 }
 
 .dropbtn4:hover, .dropbtn4:focus {

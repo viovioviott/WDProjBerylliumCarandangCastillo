@@ -93,6 +93,11 @@ header {
     transform: translateY(4px);
 }
 
+.nav a:hover, .nav a:focus {
+    font-size: 22px;
+
+}
+
 .intro h4,
 .intro p {
     margin: 0;
