@@ -32,6 +32,7 @@ p {
     width: 150px;
     margin: auto;
     margin-right: 10px;
+    margin-left: 0;
 }
 
 .middle {

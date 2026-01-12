@@ -27,6 +27,7 @@
             <a class="top" href="howto.html">How to Use</a>
             <a class="top" href="space.html">Guide on Space</a>
             <a class="top" href="authorinfo.html">About Us</a>
+            <a class="top" href="signup.html">Sign Up</a>
             </div>  
         </nav>
     
@@ -49,7 +50,7 @@
 
             <button onclick="myFunction()" class="dropbtn">Constellations</button>
             <div id="myDropdown" class="dropdown-content" >
-                <input type="text" placeholder="Search.." id="myInput" class="drpdwnbutton" class="searchbar" onkeyup="filterFunction()">
+                <input type="text" placeholder="Search.." id="myInput" class="drpdwnbutton" class="searchbar" onkeyup="filterFunction()"> <!-- attributes for the search function -->
                     <a class="drpdwnbutton" href="andromeda.html">Andromeda</a>
                     <a class="drpdwnbutton" href="#">Antlia</a>
                     <a class="drpdwnbutton" href="#">Apus</a>
@@ -143,18 +144,18 @@
             </div>
 
                     <script>
-                function myFunction() {
+                function myFunction() { // shows or hides the dropdown on click
                     document.getElementById("myDropdown").classList.toggle("show");
                 }
     
-                function filterFunction() {
-                    const input = document.getElementById("myInput");
-                    const filter = input.value.toUpperCase();
+                function filterFunction() { // function for the search bar
+                    const input = document.getElementById("myInput"); // text inputted
+                    const filter = input.value.toUpperCase(); // sets the input to be case sensitve
                     const div = document.getElementById("myDropdown");
                     const a = div.getElementsByTagName("a");
-                        for (let i = 0; i < a.length; i++) {
-                            txtValue = a[i].textContent || a[i].innerText;
-                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        for (let i = 0; i < a.length; i++) { // loops through the content
+                            txtValue = a[i].textContent || a[i].innerText; // reads the text 
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) { // compares it, checks whether or not to display depending on the match
                                 a[i].style.display = "";
                                 } else {
                                 a[i].style.display = "none";

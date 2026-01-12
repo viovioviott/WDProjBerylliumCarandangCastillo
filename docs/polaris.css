@@ -16,7 +16,7 @@
     height: 50%;
 }
 
-aside#dropboxes {
+aside#dropboxes { /* sets the design for the dropboxes */
     border: 2px solid #ffffff;
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
     width: 45%;
@@ -53,7 +53,7 @@ aside#dropboxes {
 }
 
 .dropbtn:active {
-    transform: translateY(4px);
+    transform: translateY(4px); 
 }
 
 .dropbtn:hover, .dropbtn:focus {
