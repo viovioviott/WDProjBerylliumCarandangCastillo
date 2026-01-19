@@ -54,14 +54,14 @@ header {
         max-height: 10%;
 
         display: flex; /* puts everything in one line */
-        justify-content: space-between;
-        align-items: center;
+        justify-content: space-between; /* spaces everything equally */
+        align-items: center; /* aligns things to the center */
 
         padding: 20px 40px;
-        box-sizing: border-box;
+        box-sizing: border-box; 
 
         position: sticky;
-        flex-wrap: nowrap;
+        flex-wrap: nowrap; 
 
         margin: 0 auto;
     }
@@ -90,11 +90,11 @@ header {
 }
 
 .nav a:active {
-    transform: translateY(4px);
+    transform: translateY(4px); /* moves the text when clicked (the bounce effect) */
 }
 
 .nav a:hover, .nav a:focus {
-    font-size: 22px;
+    font-size: 22px; /* increases font size when clicked (the bounce effect) */
 
 }
 
@@ -132,9 +132,9 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-sizing: border-box;
-    position: sticky;
-    flex-wrap: wrap;
+    box-sizing: border-box; /* moves the text when clicked (the bounce effect) */
+    position: sticky; /* allows the item to have a relative & fixed position */
+    flex-wrap: wrap; /* lets the content wrap */
 }
 
 #iconend {

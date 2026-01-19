@@ -1,6 +1,8 @@
+<!-- LIVE SERVER CHECK -->
+
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8   ">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="stylesheet.css">
@@ -27,6 +29,7 @@
             <a class="top" href="howto.html">How to Use</a>
             <a class="top" href="space.html">Guide on Space</a>
             <a class="top" href="authorinfo.html">About Us</a>
+            <a class="top" href="signup.html">Sign Up</a>
             </div>  
         </nav>
     
@@ -48,112 +51,112 @@
             <div id="view"><h2>View By Object</h2></div>
 
             <button onclick="myFunction()" class="dropbtn">Constellations</button>
-            <div id="myDropdown" class="dropdown-content" > <!--these two tags are for the actual dropbox-->
-                <input type="text" placeholder="Search.." id="myInput" class="drpdwnbutton" class="searchbar" onkeyup="filterFunction()"> <!--these are for the search bar-->
-                    <a class="drpdwnbutton" href="andromeda.html">Andromeda</a>
-                    <a class="drpdwnbutton" href="#">Antlia</a>
-                    <a class="drpdwnbutton" href="#">Apus</a>
-                    <a class="drpdwnbutton" href="#">Aquarius</a>
-                    <a class="drpdwnbutton" href="#">Aquila</a>
-                    <a class="drpdwnbutton" href="#">Ara</a>
-                    <a class="drpdwnbutton" href="#">Aries</a>
-                    <a class="drpdwnbutton" href="#">Auriga</a>
-                    <a class="drpdwnbutton" href="#">Bootes</a>
-                    <a class="drpdwnbutton" href="#">Caelum</a>
-                    <a class="drpdwnbutton" href="#">Camelopardalis</a>
-                    <a class="drpdwnbutton" href="#">Cancer</a>
-                    <a class="drpdwnbutton" href="#">Canes Venatici</a>
-                    <a class="drpdwnbutton" href="#">Canis Major</a>
-                    <a class="drpdwnbutton" href="#">Canis Minor</a>
-                    <a class="drpdwnbutton" href="#">Capricornus</a>
-                    <a class="drpdwnbutton" href="#">Carina</a>
-                    <a class="drpdwnbutton" href="#">Cassiopeia</a>
-                    <a class="drpdwnbutton" href="#">Centaurus</a>
-                    <a class="drpdwnbutton" href="#">Cepheus</a>
-                    <a class="drpdwnbutton" href="#">Cetus</a>
-                    <a class="drpdwnbutton" href="#">Chamaeleon</a>
-                    <a class="drpdwnbutton" href="#">Circinus</a>
-                    <a class="drpdwnbutton" href="#">Columba</a>
-                    <a class="drpdwnbutton" href="#">Coma Berenices</a>
-                    <a class="drpdwnbutton" href="#">Corona Australis</a>
-                    <a class="drpdwnbutton" href="#">Corona Borealis</a>
-                    <a class="drpdwnbutton" href="#">Corvus</a>
-                    <a class="drpdwnbutton" href="#">Crater</a>
-                    <a class="drpdwnbutton" href="#">Crux</a>
-                    <a class="drpdwnbutton" href="#">Cygnus</a>
-                    <a class="drpdwnbutton" href="#">Delphinus</a>
-                    <a class="drpdwnbutton" href="#">Dorado</a>
-                    <a class="drpdwnbutton" href="#">Draco</a>
-                    <a class="drpdwnbutton" href="#">Equuleus</a>
-                    <a class="drpdwnbutton" href="#">Eridanus</a>
-                    <a class="drpdwnbutton" href="#">Fornax</a>
-                    <a class="drpdwnbutton" href="#">Gemini</a>
-                    <a class="drpdwnbutton" href="#">Grus<a>
-                    <a class="drpdwnbutton" href="#">Hercules</a>
-                    <a class="drpdwnbutton" href="#">Horologium</a>
-                    <a class="drpdwnbutton" href="#">Hydra</a>
-                    <a class="drpdwnbutton" href="#">Hydrus</a>
-                    <a class="drpdwnbutton" href="#">Indus</a>
-                    <a class="drpdwnbutton" href="#">Lacerta</a>
-                    <a class="drpdwnbutton" href="#">Leo</a>
-                    <a class="drpdwnbutton" href="#">Leo Minor</a>
-                    <a class="drpdwnbutton" href="#">Lepus</a>
-                    <a class="drpdwnbutton" href="#">Libra</a>
-                    <a class="drpdwnbutton" href="#">Lupus</a>
-                    <a class="drpdwnbutton" href="#">Lynx</a>
-                    <a class="drpdwnbutton" href="#">Lyra</a>
-                    <a class="drpdwnbutton" href="#">Mensa</a>
-                    <a class="drpdwnbutton" href="#">Microscopium</a>
-                    <a class="drpdwnbutton" href="#">Monoceros</a>
-                    <a class="drpdwnbutton" href="#">Musca</a>
-                    <a class="drpdwnbutton" href="#">Norma</a>
-                    <a class="drpdwnbutton" href="#">Octans</a>
-                    <a class="drpdwnbutton" href="#">Ophiuchus</a>
-                    <a class="drpdwnbutton" href="#">Orion</a>
-                    <a class="drpdwnbutton" href="#">Pavo</a>
-                    <a class="drpdwnbutton" href="#">Pegasus</a>
-                    <a class="drpdwnbutton" href="#">Perseus</a>
-                    <a class="drpdwnbutton" href="#">Phoenix</a>
-                    <a class="drpdwnbutton" href="#">Pictor</a>
-                    <a class="drpdwnbutton" href="#">Pisces</a>
-                    <a class="drpdwnbutton" href="#">Piscis Austrinus</a>
-                    <a class="drpdwnbutton" href="#">Puppis</a>
-                    <a class="drpdwnbutton" href="#">Pyxis</a>
-                    <a class="drpdwnbutton" href="#">Reticulum</a>
-                    <a class="drpdwnbutton" href="#">Sagitta</a>
-                    <a class="drpdwnbutton" href="#">Sagittarius</a>
-                    <a class="drpdwnbutton" href="#">Scorpius</a>
-                    <a class="drpdwnbutton" href="#">Sculptor</a>
-                    <a class="drpdwnbutton" href="#">Scutum</a>
-                    <a class="drpdwnbutton" href="#">Serpens</a>
-                    <a class="drpdwnbutton" href="#">Sextans</a>
-                    <a class="drpdwnbutton" href="#">Taurus</a>
-                    <a class="drpdwnbutton" href="#">Telescopium</a>
-                    <a class="drpdwnbutton" href="#">Triangulum</a>
-                    <a class="drpdwnbutton" href="#">Triangulum Australe</a>
-                    <a class="drpdwnbutton" href="#">Tucana</a>
-                    <a class="drpdwnbutton" href="#">Ursa Major</a>
-                    <a class="drpdwnbutton" href="#">Ursa Minor</a>
-                    <a class="drpdwnbutton" href="#">Vela</a>
-                    <a class="drpdwnbutton" href="#">Virgo</a>
-                    <a class="drpdwnbutton" href="#">Volans</a>
-                    <a class="drpdwnbutton" href="#">Vulpecula</a>
+            <div id="myDropdown" class="dropdown-content" >
+                <input type="text" placeholder="Search.." id="myInput" class="drpdwnbutton" class="searchbar" onkeyup="filterFunction()">
+                <a class="drpdwnbutton" href="andromeda.html">Andromeda</a>
+                <a class="drpdwnbutton" href="antlia.html">Antlia</a>
+                <a class="drpdwnbutton" href="apus.html">Apus</a>
+                <a class="drpdwnbutton" href="aquarius.html">Aquarius</a>
+                <a class="drpdwnbutton" href="aquila.html">Aquila</a>
+                <a class="drpdwnbutton" href="ara.html">Ara</a>
+                <a class="drpdwnbutton" href="aries.html">Aries</a>
+                <a class="drpdwnbutton" href="auriga.html">Auriga</a>
+                <a class="drpdwnbutton" href="bootes.html">Bootes</a>
+                <a class="drpdwnbutton" href="#">Caelum</a>
+                <a class="drpdwnbutton" href="#">Camelopardalis</a>
+                <a class="drpdwnbutton" href="#">Cancer</a>
+                <a class="drpdwnbutton" href="#">Canes Venatici</a>
+                <a class="drpdwnbutton" href="#">Canis Major</a>
+                <a class="drpdwnbutton" href="#">Canis Minor</a>
+                <a class="drpdwnbutton" href="#">Capricornus</a>
+                <a class="drpdwnbutton" href="#">Carina</a>
+                <a class="drpdwnbutton" href="#">Cassiopeia</a>
+                <a class="drpdwnbutton" href="#">Centaurus</a>
+                <a class="drpdwnbutton" href="#">Cepheus</a>
+                <a class="drpdwnbutton" href="#">Cetus</a>
+                <a class="drpdwnbutton" href="#">Chamaeleon</a>
+                <a class="drpdwnbutton" href="#">Circinus</a>
+                <a class="drpdwnbutton" href="#">Columba</a>
+                <a class="drpdwnbutton" href="#">Coma Berenices</a>
+                <a class="drpdwnbutton" href="#">Corona Australis</a>
+                <a class="drpdwnbutton" href="#">Corona Borealis</a>
+                <a class="drpdwnbutton" href="#">Corvus</a>
+                <a class="drpdwnbutton" href="#">Crater</a>
+                <a class="drpdwnbutton" href="#">Crux</a>
+                <a class="drpdwnbutton" href="#">Cygnus</a>
+                <a class="drpdwnbutton" href="#">Delphinus</a>
+                <a class="drpdwnbutton" href="#">Dorado</a>
+                <a class="drpdwnbutton" href="#">Draco</a>
+                <a class="drpdwnbutton" href="#">Equuleus</a>
+                <a class="drpdwnbutton" href="#">Eridanus</a>
+                <a class="drpdwnbutton" href="#">Fornax</a>
+                <a class="drpdwnbutton" href="#">Gemini</a>
+                <a class="drpdwnbutton" href="#">Grus<a>
+                <a class="drpdwnbutton" href="#">Hercules</a>
+                <a class="drpdwnbutton" href="#">Horologium</a>
+                <a class="drpdwnbutton" href="#">Hydra</a>
+                <a class="drpdwnbutton" href="#">Hydrus</a>
+                <a class="drpdwnbutton" href="#">Indus</a>
+                <a class="drpdwnbutton" href="#">Lacerta</a>
+                <a class="drpdwnbutton" href="#">Leo</a>
+                <a class="drpdwnbutton" href="#">Leo Minor</a>
+                <a class="drpdwnbutton" href="#">Lepus</a>
+                <a class="drpdwnbutton" href="#">Libra</a>
+                <a class="drpdwnbutton" href="#">Lupus</a>
+                <a class="drpdwnbutton" href="#">Lynx</a>
+                <a class="drpdwnbutton" href="#">Lyra</a>
+                <a class="drpdwnbutton" href="#">Mensa</a>
+                <a class="drpdwnbutton" href="#">Microscopium</a>
+                <a class="drpdwnbutton" href="#">Monoceros</a>
+                <a class="drpdwnbutton" href="#">Musca</a>
+                <a class="drpdwnbutton" href="#">Norma</a>
+                <a class="drpdwnbutton" href="#">Octans</a>
+                <a class="drpdwnbutton" href="#">Ophiuchus</a>
+                <a class="drpdwnbutton" href="#">Orion</a>
+                <a class="drpdwnbutton" href="#">Pavo</a>
+                <a class="drpdwnbutton" href="#">Pegasus</a>
+                <a class="drpdwnbutton" href="#">Perseus</a>
+                <a class="drpdwnbutton" href="#">Phoenix</a>
+                <a class="drpdwnbutton" href="#">Pictor</a>
+                <a class="drpdwnbutton" href="#">Pisces</a>
+                <a class="drpdwnbutton" href="#">Piscis Austrinus</a>
+                <a class="drpdwnbutton" href="#">Puppis</a>
+                <a class="drpdwnbutton" href="#">Pyxis</a>
+                <a class="drpdwnbutton" href="#">Reticulum</a>
+                <a class="drpdwnbutton" href="#">Sagitta</a>
+                <a class="drpdwnbutton" href="#">Sagittarius</a>
+                <a class="drpdwnbutton" href="#">Scorpius</a>
+                <a class="drpdwnbutton" href="#">Sculptor</a>
+                <a class="drpdwnbutton" href="#">Scutum</a>
+                <a class="drpdwnbutton" href="#">Serpens</a>
+                <a class="drpdwnbutton" href="#">Sextans</a>
+                <a class="drpdwnbutton" href="#">Taurus</a>
+                <a class="drpdwnbutton" href="#">Telescopium</a>
+                <a class="drpdwnbutton" href="#">Triangulum</a>
+                <a class="drpdwnbutton" href="#">Triangulum Australe</a>
+                <a class="drpdwnbutton" href="#">Tucana</a>
+                <a class="drpdwnbutton" href="#">Ursa Major</a>
+                <a class="drpdwnbutton" href="#">Ursa Minor</a>
+                <a class="drpdwnbutton" href="#">Vela</a>
+                <a class="drpdwnbutton" href="#">Virgo</a>
+                <a class="drpdwnbutton" href="#">Volans</a>
+                <a class="drpdwnbutton" href="#">Vulpecula</a>
                 
                 </div>
             </div>
 
                     <script>
                 function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
+                    document.getElementById("myDropdown").classList.toggle("show"); //toggles visibility
                 }
     
                 function filterFunction() {
-                    const input = document.getElementById("myInput");
-                    const filter = input.value.toUpperCase(); // auto updates the text as full upper case 
-                    const div = document.getElementById("myDropdown"); 
+                    const input = document.getElementById("myInput"); // checks input
+                    const filter = input.value.toUpperCase(); // makes the input case sensitve
+                    const div = document.getElementById("myDropdown"); // acesses the dropboxes
                     const a = div.getElementsByTagName("a");
-                        for (let i = 0; i < a.length; i++) {
-                            txtValue = a[i].textContent || a[i].innerText;
+                        for (let i = 0; i < a.length; i++) { // circles through the item list
+                            txtValue = a[i].textContent || a[i].innerText; // compares the input to the list elements
                                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                 a[i].style.display = "";
                                 } else {
