@@ -1,16 +1,26 @@
+
 label {
     font-family: starborn;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 input {
     width: 35%;
-    height: 20%;
+    height: 20px;
+    padding: 10px 10px; /* adds space inside for text */
     display: flex;
     
+    background-color: #514da4;
+    border: 2px, #ffffff;
     font-family: vanilla;
+
     color: white;
-    font-size: 15px;
+    font-size: 20px;
 }
 
+.toCenter {
+    display: flex; /* puts everything in one line */
+    flex-direction: column;
+    text-align: left;
+}
