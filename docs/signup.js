@@ -44,8 +44,13 @@ submitLogin.addEventListener("click", function(e) {
   let notes = loadNotes();
   for (i in notes){
     if (notes[i].user == user){
+      if (notes[i].password == password){
       package = notes.push(notes[i]); // when logging in the logged in account becomes cloned and pushed into the first in queue (although not that efficient)
       saveNotes(package);
+      }
+      else{
+        alert("Incorrect password inputted");
+      }
     }
   }
 

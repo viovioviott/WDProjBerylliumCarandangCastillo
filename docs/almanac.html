@@ -47,6 +47,10 @@
       border-collapse: collapse;
       padding: 20px;
       text-align: left;
+      color: white;
+      background-color: rgb(100, 67, 223);
+      width: 50%;
+      font-size: 30px;
     }
     tr:nth-child(even) {background-color: #f2f2f2;}
     aside{ /* sets the design for the dropboxes */
@@ -104,14 +108,9 @@ select {
             <option value="creation">Date of Creation</option>
             <option value="observation">Date of Observation</option>
         </select>
+    <br> <br>    
 
     <table id="list"> 
-        <tr>
-          <th colspan="4"><b>No signups yet</b></th>
-        </tr>
-    </table>
-
-    <table border="1"> 
         <tr>
           <th colspan="4"><b>No signups yet</b></th>
         </tr>
@@ -160,6 +159,57 @@ arrange = '';
 
 // Render list to the page
 function render() {
+  const notes = loadNotes()[loadNotes().length-1].data;
+  const list = document.getElementById('list');
+
+  if (notes.length == 0) { // if there are no current save data, display no notes yet
+    list.innerHTML = '<tr><th colspan="4"><b>No signups yet</b></th></tr>';
+    return;
+  }
+  else {
+
+    let output =
+      `<tr>
+        <th>EVENT</th>
+        <th>DATE EXPECTED</th>
+        <th>DATE CREATED</th>
+        <th>LOCATION</th>
+      </tr>`;
+         
+    let existinginstances = 0;
+    let numberperevent = 0;
+     
+    for (let i = 0; i < notes.length; i++) { // once there is data, display it in a table
+      if ((filter == "All") || (filter == notes[i][0])) {
+        numberperevent += 1;
+      }
+    }
+     
+    if (numberperevent != 0) {
+
+      for (let i = 0; i < notes.length; i++) { // once there is data, display it in a table
+        if ((filter == "All") || (filter == notes[i][0])) {
+          output += `<tr>
+            <td>${notes[i][0]}</td>
+            <td>${notes[i][1]}</td>
+            <td>${notes[i][2]}</td>
+            <td>${notes[i][3]}</td>
+          </tr>`;
+        }
+      }
+
+
+    } else {
+      if ((existinginstances == 0)) {
+        output = '<tr><th colspan="4"><b>No signups yet for this club.</b></th></tr>';
+        existinginstances += 1;
+      }
+    }
+
+
+    list.innerHTML = output;
+  }
+
 
 
 };

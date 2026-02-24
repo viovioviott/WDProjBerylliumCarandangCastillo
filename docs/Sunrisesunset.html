@@ -145,6 +145,22 @@ p{
     </footer>
 
     <script>
+        function loadNotes() { // this is to load the data
+        const KEY = "notes";
+        const raw = localStorage.getItem(KEY); 
+
+        function saveNotes(entries) {
+        localStorage.setItem(KEY, JSON.stringify(entries));
+        }       
+
+        if (raw) {
+        return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
+        } else {
+        return []; // if none, return a blank array
+        }
+        }
+
+
         document.getElementById('generate').onclick = function(event) { // generate the data
         const location= document.getElementById('location').value.trim();
         const date = document.getElementById('date').value.trim();
@@ -245,10 +261,25 @@ p{
         locationelement.innerHTML = "Location: "; 
         }
         document.getElementById('save').onclick = function(event) {
-            const dateelement = document.getElementById('dateelement');
+        const srss = document.getElementById('srss').value.trim();
+        const date = document.getElementById('date').value.trim();
+        const datecreatedelement = new Date().toLocaleTimeString();
+        const location = document.getElementById('location').value.trim();
+        
+        let notes = loadNotes()[loadNotes().length-1].date;
+        let package = {
+            user: loadNotes()[loadNotes().length-1].user,
+            password: loadNotes()[loadNotes().length-1].password,
+            data: notes.push([srss, date, datecreatedelement, location])
+        };
+        let finalpackage = loadNotes().push(package);
+        saveNotes(finalpackage);
+
+        const dateelement = document.getElementById('dateelement');
         dateelement.innerHTML = "Date: ";
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
+        
         }
 
     </script>
