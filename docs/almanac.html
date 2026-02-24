@@ -31,22 +31,60 @@
             
             </div>  
         </nav>
-    
+
+        
+    <style>
+    td, th{
+      border: 1px solid;
+    }
+    table{
+      border: 3px solid;
+      border-collapse: collapse;
+      padding: 20px;
+      text-align: left;
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    aside{ /* sets the design for the dropboxes */
+    border: 2px solid #ffffff;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+    width: 45%;
+    min-height: 100vh;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px; 
+}
+    </style>
+
     </header>
 
+
+
+
+
     <table id="list"> 
-        <tr><th colspan="4"><b>No signups yet</b></th></tr>
+        <tr>
+          <th colspan="4"><b>No signups yet</b></th>
+        </tr>
+    </table>
+
+    <table border="1"> 
+        <tr>
+          <th colspan="4"><b>No signups yet</b></th>
+        </tr>
     </table>
 
     <h3>Filter by Event</h3>
     <label>
         Filter by Event
         <select id="filter" name="filter">
+            <option value="All">All</option>
             <option value="Sunrise">Sunrise</option>
             <option value="Sunset">Sunset</option>
             <option value="Solar Eclipse">Solar Eclipse</option>
             <option value="Lunar Eclipse">Lunar Eclipse</option>
             <option value="Seasons">Seasons</option>
+        </select>
     </label>
 
     <h3>Arrange by</h3>
@@ -55,100 +93,17 @@
         <select id="arrange" name="arrange">
             <option value="creation">Date of Creation</option>
             <option value="observation">Date of Observation</option>
+        </select>
     </label>
-      
-    <style>
-      td, th{
-        border: 1px solid;
-      }
-      table{
-        border: 3px solid;
-        border-collapse: collapse;
-        padding: 20px;
-        text-align: left;
-      }
-      tr:nth-child(even) {background-color: #f2f2f2;}
-    </style>
-
-    <script>
-       function loadNotes() {// this is to load the data
-      const KEY = "notes";
-      const raw = localStorage.getItem(KEY); 
-
-      if (raw){
-        return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
-      }
-      else{
-        return []; // if none, return a blank array
-      }
-      }
-      
-    //filters
-    filter = '';
-    arrange = '';
     
- 
-    // Render list to the page
-    function render() {
-      const notes = loadNotes()[loadNotes().length-1].data;
-      const list = document.getElementById('list');
-      if (1) { // if there are no current save data, display no notes yet
-        list.innerHTML = '<tr><th colspan="4"><b>No signups yet</b></th></tr>';
-        return;
-      }
-      else{
-      let output =
-      `<tr>
-          <th>EVENT</th>
-           <th>DATE EXPECTED</th>
-           <th>DATE CREATED</th>
-           <th>LOCATION</th>
-         </tr>`;
-         
-        let existinginstances = 0;
-        let numberperevent = 0;
-      
-      for (let i = 0; i < notes.length; i++) { // once there is data, display it in a table
-        if ((filter == "All")||(filter == notes[i].event)){
-          numberperclub += 1;
-        }
-      }
-      
-      if (numberperclub != 0){
-      for (let i = 0; i < notes.length; i++) { // once there is data, display it in a table
-        if ((clubfilter == "All")||(filter == notes[i].event)){
-        output += `<tr>
-           <td>${notes[i].event}</td>
-           <td>${notes[i].dateexpected}</td>
-           <td>${notes[i].datecreated}</td>
-           <td>${notes[i].location}</td>
-         </tr>`;
-        }
-      }}
-      else {
-          if ((existinginstances == 0)){
-          output = '<tr><th colspan="9"><b>No signups yet for this club.</b></th></tr>'
-          existinginstances += 1;
-          }
-      }
-      list.innerHTML = output;
-        }
-    }
-    
-    render();
-    
-     document.getElementById('filter').onclick = function(event) // filter out the students
-    { 
-        filter = document.getElementById('filter').value.trim();
-        render();
-    }
-    document.getElementById('arrange').onclick = function(event) // filter out the students
-    {
-        filter = document.getElementById('arrange').value.trim();
-        render();
-    }
+    <aside>
+    <div id="myDropdown" class="dropdown-content">
+                <a class="drpdwnbutton" href="Sunrisesunset.html">Sunrise/Sunset Times</a>
+                <a class="drpdwnbutton" href="Solarlunareclipse.html">Solar/Lunar Eclipses</a>
+                <a class="drpdwnbutton" href="Seasons.html">Season Equinox/Soltices</a>
+                </div>
+    </aside>
 
-    </script>
 
     <footer>
         <div class="content">
@@ -165,4 +120,95 @@
         <p style="font-size: 15px;">A Guide to the Stars</p>
         </section>
     </footer>
+
+
+
+
+
+    <script>
+
+function loadNotes() { // this is to load the data
+const KEY = "notes";
+const raw = localStorage.getItem(KEY); 
+
+if (raw) {
+  return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
+} else {
+  return []; // if none, return a blank array
+}
+}
+
+// filters
+filter = '';
+arrange = '';
+
+
+// Render list to the page
+function render() {
+  const notes = loadNotes()[loadNotes().length - 1].data;
+  const list = document.getElementById('list');
+
+  if (1) { // if there are no current save data, display no notes yet
+    list.innerHTML = '<tr><th colspan="4"><b>No signups yet</b></th></tr>';
+    return;
+  } else {
+
+    let output =
+      `<tr>
+        <th>EVENT</th>
+        <th>DATE EXPECTED</th>
+        <th>DATE CREATED</th>
+        <th>LOCATION</th>
+      </tr>`;
+         
+    let existinginstances = 0;
+    let numberperevent = 0;
+      
+    for (let i = 0; i < notes.length; i++) { // once there is data, display it in a table
+      if ((filter == "All") || (filter == notes[i].event)) {
+        numberperclub += 1;
+      }
+    }
+      
+    if (numberperclub != 0) {
+
+      for (let i = 0; i < notes.length; i++) { // once there is data, display it in a table
+        if ((clubfilter == "All") || (filter == notes[i].event)) {
+          output += `<tr>
+            <td>${notes[i].event}</td>
+            <td>${notes[i].dateexpected}</td>
+            <td>${notes[i].datecreated}</td>
+            <td>${notes[i].location}</td>
+          </tr>`;
+        }
+      }
+
+    } else {
+      if ((existinginstances == 0)) {
+        output = '<tr><th colspan="9"><b>No signups yet for this club.</b></th></tr>';
+        existinginstances += 1;
+      }
+    }
+
+    list.innerHTML = output;
+  }
+}
+
+render();
+
+document.getElementById('filter').onclick = function(event) { // filter out the students
+  filter = document.getElementById('filter').value.trim();
+  render();
+}
+
+document.getElementById('arrange').onclick = function(event) { // filter out the students
+  filter = document.getElementById('arrange').value.trim();
+  render();
+}
+
+
+    </script>
+
+
+
 </body>

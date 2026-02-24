@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8   ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="signup.css">
+
+    <title>Polaris</title>
+    <link rel="icon" type="image/ico" href="images/favicon.ico?v=2">
+
+    <style>
+        label {
+        font-family: starborn;
+        color: white;
+        font-size: 30px;
+        }
+
+        input {
+        width: 35%;
+        height: 20px;
+        padding: 10px 10px; /* adds space inside for text */
+        display: flex;
+    
+        background-color: #514da4;
+        border: 2px, #ffffff;
+        font-family: vanilla;
+
+        color: white;
+        font-size: 20px;
+        }
+
+        .toCenter {
+        display: flex; /* puts everything in one line */
+        flex-direction: column;
+        text-align: left;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 130px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        }
+        select {
+        width: 25%;
+        font-size: 2em;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+        }
+        button {
+  background-color: rgb(45, 0, 247);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  cursor: pointer;
+}
+p{
+
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="intro">
+            <div>
+                <img id="icon" src="images/polarislogo.png" alt="Polaris Logo"> 
+            </div>
+        <a style="font-size: 40px;" style="font-family: starborn"; href="index.html">POLARIS</a>
+        <p style="font-size: 20px;">A Guide to the Stars</p>
+        </section>
+        
+        <nav>
+            <div class="nav">
+            <a class="top" href="index.html">Home</a>
+            <a class="top" href="polaris.html">Polaris</a>
+            <a class="top" href="howto.html">How to Use</a>
+            <a class="top" href="space.html">Guide on Space</a>
+            <a class="top" href="authorinfo.html">About Us</a>
+            <a class="top" href="signup.html">Sign Up</a>
+            </div>  
+        </nav>
+    
+    </header>
+        
+    <hr>
+    <br>
+
+    <form action="input page name" id="toCenter">
+    <fieldset>
+        <label for="years" id="title"> Year: </label> 
+        <select id="years" name="years">
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+        </select>
+        <br> <br>
+        <label for="season" id="title"> Season: </label> 
+        <select id="season" name="season">
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Autumn">Autumn</option>
+                <option value="Winter">Winter</option>
+        </select>
+        <br> <br>
+        <label for="location" id="title"> Location: </label> 
+        <select id="location" name="location">
+                <option value="Northern Hemisphere">Northern Hemisphere</option>
+                <option value="Southern Hemisphere">Southern Hemisphere</option>
+        </select>
+        <br> <br>
+    
+    <button type="button" id="generate"> Generate </button>
+    <button type="button" id="save"> Save </button>
+    <button type="reset" id="reset"> Reset </button>
+    </fieldset>
+    </form>
+    <p style="font-size:30px" id="date">Date: </p>
+    <p style="font-size:30px" id="locationtext">Location: </p>
+
+
+    <hr>
+    <footer>
+        <div class="content">
+            <p>2025-2026</p>
+            <p>b2029 Beryllium</p>
+            <p>CARANDANG</p>
+            <p>CASTILLO</p>
+            <a src="https://docs.google.com/document/d/1y0HDwMChhhde23UVxOnTq2EY30sKsKeAYRubpdIylVM/edit?usp=sharing">CITATIONS</a>
+        </div>
+
+        <section class="outro">
+        <img id="iconend" src="images/polarislogo.png" alt="Polaris Logo"> 
+        <h4 style="font-size: 30px;">Polaris</h3>
+        <p style="font-size: 15px;">A Guide to the Stars</p>
+        </section>
+    </footer>
+
+    <script>
+        document.getElementById('generate').onclick = function(event) { // generate the data
+        const year = document.getElementById('years').value.trim();
+        const location = document.getElementById('location').value.trim();
+        const season = document.getElementById('season').value.trim();
+
+        let date = "";
+
+        const dateelement = document.getElementById('date');
+        dateelement.innerHTML = "Date: ";
+        const locationelement = document.getElementById('locationtext');
+        locationelement.innerHTML = "Location: "; 
+        
+        if (year == "2023"){
+            if (location == "Northern Hemisphere"){
+                if (season == "Spring"){
+                    date = "21-3-2023";
+                }
+                else if (season == "Summer"){
+                    date = "21-6-2023";
+                }
+                else if (season == "Autumn"){
+                    date = "23-9-2023";
+                }
+                else{
+                    date = "22-12-2023";
+                }
+            }
+            else{
+                if (season == "Spring"){
+                    date = "22-12-2023";
+                }
+                else if (season == "Summer"){
+                    date = "23-9-2023";
+                }
+                else if (season == "Autumn"){
+                    date = "21-6-2023";
+                }
+                else{
+                    date = "21-3-2023";
+                }
+            }
+        }
+        if (year == "2024"){
+            if (location == "Northern Hemisphere"){
+                if (season == "Spring"){
+                    date = "20-3-2024";
+                }
+                else if (season == "Summer"){
+                    date = "21-6-2024";
+                }
+                else if (season == "Autumn"){
+                    date = "22-9-2024";
+                }
+                else{
+                    date = "21-12-2024";
+                }
+            }
+            else{
+                if (season == "Spring"){
+                    date = "21-12-2024";
+                }
+                else if (season == "Summer"){
+                    date = "22-9-2024";
+                }
+                else if (season == "Autumn"){
+                    date = "21-6-2024";
+                }
+                else{
+                    date = "20-3-2024";
+                }
+            }
+        }
+        if (year == "2025"){
+            if (location == "Northern Hemisphere"){
+                if (season == "Spring"){
+                    date = "20-3-2025";
+                }
+                else if (season == "Summer"){
+                    date = "21-6-2025";
+                }
+                else if (season == "Autumn"){
+                    date = "23-9-2025";
+                }
+                else{
+                    date = "21-12-2025";
+                }
+            }
+            else{
+                if (season == "Spring"){
+                    date = "21-12-2025";
+                }
+                else if (season == "Summer"){
+                    date = "23-9-2025";
+                }
+                else if (season == "Autumn"){
+                    date = "21-6-2025";
+                }
+                else{
+                    date = "20-3-2025";
+                }
+            }
+        }
+        if (year == "2026"){
+            if (location == "Northern Hemisphere"){
+                if (season == "Spring"){
+                    date = "20-3-2026";
+                }
+                else if (season == "Summer"){
+                    date = "21-6-2026";
+                }
+                else if (season == "Autumn"){
+                    date = "23-9-2026";
+                }
+                else{
+                    date = "22-12-2026";
+                }
+            }
+            else{
+                if (season == "Spring"){
+                    date = "22-12-2026";
+                }
+                else if (season == "Summer"){
+                    date = "23-9-2026";
+                }
+                else if (season == "Autumn"){
+                    date = "21-6-2026";
+                }
+                else{
+                    date = "20-3-2026";
+                }
+            }
+        }
+
+        //change the actual text content
+
+        //const dateelement = document.getElementById('date');
+        dateelement.innerHTML += date;
+        //const locationelement = document.getElementById('locationtext');
+        locationelement.innerHTML += location; 
+        
+        }
+        document.getElementById('reset').onclick = function(event) {
+            const dateelement = document.getElementById('date');
+        dateelement.innerHTML = "Date: ";
+        const locationelement = document.getElementById('locationtext');
+        locationelement.innerHTML = "Location: "; 
+        }
+        document.getElementById('save').onclick = function(event) {
+            const dateelement = document.getElementById('date');
+        dateelement.innerHTML = "Date: ";
+        const locationelement = document.getElementById('locationtext');
+        locationelement.innerHTML = "Location: "; 
+        }
+
+    </script>
+
+    <script src="signup.js"></script>
+</body>
