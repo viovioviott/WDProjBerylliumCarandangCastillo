@@ -47,7 +47,7 @@
       border-collapse: collapse;
       padding: 20px;
       text-align: left;
-      color: rgb(94, 69, 133);
+      color: rgb(0, 0, 0);
       background-color: rgb(100, 67, 223);
       width: 50%;
       font-size: 30px;
@@ -71,6 +71,7 @@ select {
         border: none;
         border-radius: 4px;
         background-color: #f1f1f1;
+        font-family: starborn;
         }
         .drpdwnbutton {
     display: block;
@@ -153,11 +154,12 @@ if (raw) {
 } else {
   return []; // if none, return a blank array
 }
-}
+};
 
 // filters
-filter = '';
-arrange = '';
+let filter = '';
+let arrange = '';
+let loaded = 0;
 
 
 // Render list to the page
@@ -186,8 +188,8 @@ function render() {
     for (let i = 0; i < notes.length; i++) { // once there is data, display it in a table
       if ((filter == "All") || (filter == notes[i][0])) {
         numberperevent += 1;
-      }
-    }
+      };
+    };
      
     if (numberperevent != 0) {
 
@@ -199,8 +201,8 @@ function render() {
             <td>${notes[i][2]}</td>
             <td>${notes[i][3]}</td>
           </tr>`;
-        }
-      }
+        };
+      };
 
 
     } else {
@@ -208,28 +210,31 @@ function render() {
         output = `<tr><th colspan="4"><b>No events created yet under this type.</b></th></tr>`;
         existinginstances += 1;
       }
-    }
+    };
 
 
     list.innerHTML = output;
-  }
+  };
 
 
 
 };
 
 
+
 render();
+
+
 
 document.getElementById('filter').onclick = function(event) { // filter out the students
   filter = document.getElementById('filter').value.trim();
   render();
-}
+};
 
 document.getElementById('arrange').onclick = function(event) { // filter out the students
   arrange = document.getElementById('arrange').value.trim();
   render();
-}
+};
 
 
     </script>

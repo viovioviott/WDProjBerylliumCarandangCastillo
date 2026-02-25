@@ -238,19 +238,23 @@ p{
         }
         document.getElementById('save').onclick = function(event) {
 
-        if (loadNotes()[loadNotes().length-1]){
+        let rawnotes = loadNotes();
+
+        if (localStorage.getItem("record") == "in"){
         const lunarsolar = document.getElementById('lunarsolar').value.trim();
         const date = dateoutput;
         const datecreatedelement = new Date().toLocaleTimeString();
         const location = document.getElementById('location').value.trim();
         
-        let notes = loadNotes()[loadNotes().length-1].data;
+        let notes = rawnotes[rawnotes.length-1].data;
+        notes.push([srss, date, datecreatedelement, location]);
         let package = {
-            user: loadNotes()[loadNotes().length-1].user,
-            password: loadNotes()[loadNotes().length-1].password,
-            data: notes.push([srss, date, datecreatedelement, location])
+            user: rawnotes[rawnotes.length-1].user,
+            password: rawnotes[rawnotes.length-1].password,
+            data: notes
         };
-        let finalpackage = loadNotes().push(package);
+        let finalpackage = loadNotes();
+        finalpackage.push(package);
         saveNotes(finalpackage);
 
         const dateelement = document.getElementById('dateelement');

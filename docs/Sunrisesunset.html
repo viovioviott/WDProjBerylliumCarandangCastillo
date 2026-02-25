@@ -271,7 +271,7 @@ p{
         }
         document.getElementById('save').onclick = function(event) {
 
-        let rawnotes = loadNotes()
+        let rawnotes = loadNotes();
 
         if (localStorage.getItem("record") == "in"){
         const srss = document.getElementById('srss').value.trim();
@@ -280,7 +280,7 @@ p{
         const location = document.getElementById('location').value.trim();
         
         let notes = rawnotes[rawnotes.length-1].data;
-        notes.push([srss, date, datecreatedelement, location])
+        notes.push([srss, date, datecreatedelement, location]);
         let package = {
             user: rawnotes[rawnotes.length-1].user,
             password: rawnotes[rawnotes.length-1].password,
