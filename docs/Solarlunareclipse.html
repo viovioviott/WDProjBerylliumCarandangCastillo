@@ -97,26 +97,18 @@ p{
 
     <form action="input page name" id="toCenter">
     <fieldset>
-        <label for="years" id="title"> Year: </label> 
-        <select id="years" name="years">
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-        </select>
-        <br> <br>
-        <label for="season" id="title"> Season: </label> 
-        <select id="season" name="season">
-                <option value="Spring">Spring</option>
-                <option value="Summer">Summer</option>
-                <option value="Autumn">Autumn</option>
-                <option value="Winter">Winter</option>
-        </select>
-        <br> <br>
-        <label for="location" id="title"> Location: </label> 
+        <label for="location" id="title">Location: </label> 
         <select id="location" name="location">
-                <option value="Northern Hemisphere">Northern Hemisphere</option>
-                <option value="Southern Hemisphere">Southern Hemisphere</option>
+                <option value="Manila">Manila</option>
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                <option value="Tokyo">Tokyo</option>
+        </select>
+        <br> <br>
+        <label for="lunarsolar" id="title">Lunar/Solar Eclipse: </label> 
+        <select id="lunarsolar" name="lunarsolar">
+                <option value="Lunar">Next Lunar Eclipse</option>
+                <option value="Solar">Next Solar Eclipse</option>
         </select>
         <br> <br>
     
@@ -125,7 +117,7 @@ p{
     <button type="reset" id="reset"> Reset </button>
     </fieldset>
     </form>
-    <p style="font-size:30px" id="date">Date: </p>
+    <p style="font-size:30px" id="dateelement">Date: </p>
     <p style="font-size:30px" id="locationtext">Location: </p>
 
 
@@ -147,158 +139,111 @@ p{
     </footer>
 
     <script>
+        function loadNotes() { // this is to load the data
+        const KEY = "notes";
+        const raw = localStorage.getItem(KEY); 
+
+        function saveNotes(entries) {
+        localStorage.setItem(KEY, JSON.stringify(entries));
+        }       
+
+        if (raw) {
+        return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
+        } else {
+        return []; // if none, return a blank array
+        }
+        }
+
+
+        let datedata = "";
+
         document.getElementById('generate').onclick = function(event) { // generate the data
-        const year = document.getElementById('years').value.trim();
-        const location = document.getElementById('location').value.trim();
-        const season = document.getElementById('season').value.trim();
+        const location= document.getElementById('location').value.trim();
+        const lunarsolar = document.getElementById('lunarsolar').value.trim();
 
-        let date = "";
-
-        const dateelement = document.getElementById('date');
+        const dateelement = document.getElementById('dateelement');
         dateelement.innerHTML = "Date: ";
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
+
+        let dateoutput = ""; // dateoutput will be put to dateelement so that it can appear
+        //after clicking generate, but then it also goes to date data so that it can also be
+        //saved by the SAVE function
         
-        if (year == "2023"){
-            if (location == "Northern Hemisphere"){
-                if (season == "Spring"){
-                    date = "21-3-2023";
-                }
-                else if (season == "Summer"){
-                    date = "21-6-2023";
-                }
-                else if (season == "Autumn"){
-                    date = "23-9-2023";
-                }
-                else{
-                    date = "22-12-2023";
-                }
+        if (location == "Manila"){
+            if (lunarsolar == "Lunar"){
+                dateoutput = "2026-03-03";
             }
             else{
-                if (season == "Spring"){
-                    date = "22-12-2023";
-                }
-                else if (season == "Summer"){
-                    date = "23-9-2023";
-                }
-                else if (season == "Autumn"){
-                    date = "21-6-2023";
-                }
-                else{
-                    date = "21-3-2023";
-                }
+                dateoutput = "2042-04-20";
             }
         }
-        if (year == "2024"){
-            if (location == "Northern Hemisphere"){
-                if (season == "Spring"){
-                    date = "20-3-2024";
-                }
-                else if (season == "Summer"){
-                    date = "21-6-2024";
-                }
-                else if (season == "Autumn"){
-                    date = "22-9-2024";
-                }
-                else{
-                    date = "21-12-2024";
-                }
+        if (location == "New York"){
+            if (lunarsolar == "Lunar"){
+                dateoutput = "2026-03-03";
             }
             else{
-                if (season == "Spring"){
-                    date = "21-12-2024";
-                }
-                else if (season == "Summer"){
-                    date = "22-9-2024";
-                }
-                else if (season == "Autumn"){
-                    date = "21-6-2024";
-                }
-                else{
-                    date = "20-3-2024";
-                }
+                dateoutput = "2079-05-01";
             }
         }
-        if (year == "2025"){
-            if (location == "Northern Hemisphere"){
-                if (season == "Spring"){
-                    date = "20-3-2025";
-                }
-                else if (season == "Summer"){
-                    date = "21-6-2025";
-                }
-                else if (season == "Autumn"){
-                    date = "23-9-2025";
-                }
-                else{
-                    date = "21-12-2025";
-                }
+        if (location == "London"){
+            if (lunarsolar == "Lunar"){
+                dateoutput = "2028-12-31";
             }
             else{
-                if (season == "Spring"){
-                    date = "21-12-2025";
-                }
-                else if (season == "Summer"){
-                    date = "23-9-2025";
-                }
-                else if (season == "Autumn"){
-                    date = "21-6-2025";
-                }
-                else{
-                    date = "20-3-2025";
-                }
+                dateoutput = "2090-09-23";
             }
         }
-        if (year == "2026"){
-            if (location == "Northern Hemisphere"){
-                if (season == "Spring"){
-                    date = "20-3-2026";
-                }
-                else if (season == "Summer"){
-                    date = "21-6-2026";
-                }
-                else if (season == "Autumn"){
-                    date = "23-9-2026";
-                }
-                else{
-                    date = "22-12-2026";
-                }
+        if (location == "Tokyo"){
+            if (lunarsolar == "Lunar"){
+                dateoutput = "2026-03-03";
             }
             else{
-                if (season == "Spring"){
-                    date = "22-12-2026";
-                }
-                else if (season == "Summer"){
-                    date = "23-9-2026";
-                }
-                else if (season == "Autumn"){
-                    date = "21-6-2026";
-                }
-                else{
-                    date = "20-3-2026";
-                }
+                dateoutput = "2035-09-02";
             }
         }
 
         //change the actual text content
 
         //const dateelement = document.getElementById('date');
-        dateelement.innerHTML += date;
+        dateelement.innerHTML += dateoutput;
         //const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML += location; 
+        datedata = dateoutput; // so that save would be able to get the data 
         
         }
         document.getElementById('reset').onclick = function(event) {
-            const dateelement = document.getElementById('date');
-        dateelement.innerHTML = "Date: ";
+        const dateelement = document.getElementById('dateelement');
+        dateelement.innerHTML = "Date: "; 
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
         }
         document.getElementById('save').onclick = function(event) {
-            const dateelement = document.getElementById('date');
+
+        if (loadNotes()[loadNotes().length-1]){
+        const lunarsolar = document.getElementById('lunarsolar').value.trim();
+        const date = dateoutput;
+        const datecreatedelement = new Date().toLocaleTimeString();
+        const location = document.getElementById('location').value.trim();
+        
+        let notes = loadNotes()[loadNotes().length-1].date;
+        let package = {
+            user: loadNotes()[loadNotes().length-1].user,
+            password: loadNotes()[loadNotes().length-1].password,
+            data: notes.push([srss, date, datecreatedelement, location])
+        };
+        let finalpackage = loadNotes().push(package);
+        saveNotes(finalpackage);
+
+        const dateelement = document.getElementById('dateelement');
         dateelement.innerHTML = "Date: ";
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
+        }
+        else {
+            alert("You are not logged in. Please log in to save or schedule events.")
+        }
+        
         }
 
     </script>

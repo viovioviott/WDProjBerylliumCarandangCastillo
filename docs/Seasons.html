@@ -104,10 +104,10 @@
         <br> <br>
         <label for="season" id="title"> Season: </label> 
         <select id="season" name="season">
-                <option value="Spring">Spring</option>
-                <option value="Summer">Summer</option>
-                <option value="Autumn">Autumn</option>
-                <option value="Winter">Winter</option>
+                <option value="Spring Equinox">Spring Equinox</option>
+                <option value="Summer Solstice">Summer Solstice</option>
+                <option value="Autumn Equinox">Autumn Equinox</option>
+                <option value="Winter Solstice">Winter Solstice</option>
         </select>
         <br> <br>
         <label for="location" id="title"> Location: </label> 
@@ -292,10 +292,30 @@
         locationelement.innerHTML = "Location: "; 
         }
         document.getElementById('save').onclick = function(event) {
+
+        if (loadNotes()[loadNotes().length-1]){
+        const season = document.getElementById('season').value.trim();
+        const date = dateoutput;
+        const datecreatedelement = new Date().toLocaleTimeString();
+        const location = document.getElementById('location').value.trim();
+        
+        let notes = loadNotes()[loadNotes().length-1].date;
+        let package = {
+            user: loadNotes()[loadNotes().length-1].user,
+            password: loadNotes()[loadNotes().length-1].password,
+            data: notes.push([srss, date, datecreatedelement, location])
+        };
+        let finalpackage = loadNotes().push(package);
+        saveNotes(finalpackage);
+
             const dateelement = document.getElementById('date');
         dateelement.innerHTML = "Date: ";
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
+        }
+        else {
+            alert("You are not logged in. Please log in to save or schedule events.")
+        }
         }
 
     </script>

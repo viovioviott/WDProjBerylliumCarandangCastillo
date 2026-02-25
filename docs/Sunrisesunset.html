@@ -173,7 +173,7 @@ p{
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
 
-        let dateoutput = "Date:"; // dateoutput will be put to dateelement so that it can appear
+        let dateoutput = ""; // dateoutput will be put to dateelement so that it can appear
         //after clicking generate, but then it also goes to date data so that it can also be
         //saved by the SAVE function
         
@@ -266,6 +266,8 @@ p{
         locationelement.innerHTML = "Location: "; 
         }
         document.getElementById('save').onclick = function(event) {
+
+        if (loadNotes()[loadNotes().length-1]){
         const srss = document.getElementById('srss').value.trim();
         const date = dateoutput;
         const datecreatedelement = new Date().toLocaleTimeString();
@@ -284,6 +286,10 @@ p{
         dateelement.innerHTML = "Date: ";
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
+        }
+        else {
+            alert("You are not logged in. Please log in to save or schedule events.")
+        }
         
         }
 
