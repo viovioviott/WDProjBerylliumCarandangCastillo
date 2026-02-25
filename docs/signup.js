@@ -21,7 +21,7 @@ submitSignup.addEventListener("click", function(e) {
   e.preventDefault(); // to avoid immediately resetting the data
   const password = document.getElementById('pswrd').value.trim();
   const user = document.getElementById('user').value.trim();
-  starter =
+  let starter =
   {
     user: user, 
     password: password,
@@ -30,6 +30,7 @@ submitSignup.addEventListener("click", function(e) {
   let notes = loadNotes()
   package = notes.push(starter); // when signingup the recently created account becomes first in queue
   saveNotes(package);
+  alert("Signup successful.");
 
   //document.getElementById("pswrd").innerHTML = "";
   //document.getElementById("user").innerHTML = "";

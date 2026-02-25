@@ -86,7 +86,9 @@ p{
             <a class="top" href="howto.html">How to Use</a>
             <a class="top" href="space.html">Guide on Space</a>
             <a class="top" href="authorinfo.html">About Us</a>
+            <a class="top" href="almanac.html">Almanac</a>
             <a class="top" href="signup.html">Sign Up</a>
+            
             </div>  
         </nav>
     
@@ -153,6 +155,22 @@ p{
         return []; // if none, return a blank array
         }
         }
+
+
+        function loadNotes() { // this is to load the data
+        const KEY = "notes";
+        const raw = localStorage.getItem(KEY);  
+
+        if (raw) {
+        return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
+        } else {
+        return []; // if none, return a blank array
+        }
+        }
+
+        function saveNotes(entries) {
+        localStorage.setItem(KEY, JSON.stringify(entries));
+        }   
 
 
         let datedata = "";
@@ -226,7 +244,7 @@ p{
         const datecreatedelement = new Date().toLocaleTimeString();
         const location = document.getElementById('location').value.trim();
         
-        let notes = loadNotes()[loadNotes().length-1].date;
+        let notes = loadNotes()[loadNotes().length-1].data;
         let package = {
             user: loadNotes()[loadNotes().length-1].user,
             password: loadNotes()[loadNotes().length-1].password,
