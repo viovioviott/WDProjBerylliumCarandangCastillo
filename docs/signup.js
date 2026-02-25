@@ -1,7 +1,7 @@
 
 const KEY = 'notes';
 
- function loadNotes() {
+function loadNotes() {
       const raw = localStorage.getItem(KEY);
 
       if (raw){
@@ -27,10 +27,12 @@ submitSignup.addEventListener("click", function(e) {
     password: password,
     data : []
   };
-  let notes = loadNotes()
-  package = notes.push(starter); // when signingup the recently created account becomes first in queue
-  saveNotes(package);
-  alert("Signup successful.");
+  let notes = loadNotes(); // when signingup the recently created account becomes first in queue
+  notes.push(starter);
+  saveNotes(notes);
+  alert("Signup successful");
+
+  localStorage.setItem("record", "in");
 
   //document.getElementById("pswrd").innerHTML = "";
   //document.getElementById("user").innerHTML = "";
@@ -46,13 +48,19 @@ submitLogin.addEventListener("click", function(e) {
   for (i in notes){
     if (notes[i].user == user){
       if (notes[i].password == password){
-      package = notes.push(notes[i]); // when logging in the logged in account becomes cloned and pushed into the first in queue (although not that efficient)
+      let package = notes;
+      package.push(notes[i]); // when logging in the logged in account becomes cloned and pushed into the first in queue (although not that efficient)
       saveNotes(package);
+      localStorage.setItem("record", "in");
       }
       else{
         alert("Incorrect password inputted");
       }
     }
+  }
+
+  if (localStorage.getItem("record")=="in"){
+    alert("Login successful");
   }
 
   //document.getElementById("pswrd").innerHTML = "";
@@ -61,10 +69,8 @@ submitLogin.addEventListener("click", function(e) {
 
 const submitLogout = document.getElementById('Logout');
 submitLogout.addEventListener("click", function(e) {
-      let notes = loadNotes();
-      package = notes.push(0);
-      saveNotes(package); // first in queue becomes 0, so that means that there is no account logged in
-
+      localStorage.setItem("record", "out"); // first in queue becomes 0, so that means that there is no account logged in
+      alert("Logout successful");
       //document.getElementById("pswrd").innerHTML = "";
       //document.getElementById("user").innerHTML = "";
     });

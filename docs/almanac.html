@@ -47,7 +47,7 @@
       border-collapse: collapse;
       padding: 20px;
       text-align: left;
-      color: white;
+      color: rgb(94, 69, 133);
       background-color: rgb(100, 67, 223);
       width: 50%;
       font-size: 30px;
@@ -100,7 +100,10 @@ select {
             <option value="Sunset">Sunset</option>
             <option value="Solar Eclipse">Solar Eclipse</option>
             <option value="Lunar Eclipse">Lunar Eclipse</option>
-            <option value="Seasons">Seasons</option>
+            <option value="Spring Equinox">Spring Equinox</option>
+            <option value="Summer Solstice">Summer Solstice</option>
+            <option value="Autumn Equinox">Autumn Equinox</option>
+            <option value="Winter Solstice">Winter Solstice</option>
         </select>
     <br> <br>
     <label for="arrange" id="title">Arrange By</label> 
@@ -112,7 +115,7 @@ select {
 
     <table id="list"> 
         <tr>
-          <th colspan="4"><b>No signups yet</b></th>
+          <th colspan="4"><b></b></th>
         </tr>
     </table>
     
@@ -159,12 +162,13 @@ arrange = '';
 
 // Render list to the page
 function render() {
-  const notes = loadNotes()[loadNotes().length-1].data;
+  const rawnotes = loadNotes()
+  const notes = rawnotes.at(-1).data;
   const list = document.getElementById('list');
 
-  if (notes.length == 0) { // if there are no current save data, display no notes yet
-    list.innerHTML = '<tr><th colspan="4"><b>No signups yet</b></th></tr>';
-    return;
+  if ((localStorage.getItem("record") == "out")||(localStorage.getItem("record") == null)) { // if there are no current save data, display no notes yet
+    list.innerHTML = `<tr><th colspan="4"><b>Log in to access this feature.</b></th></tr>`;
+    
   }
   else {
 
@@ -201,7 +205,7 @@ function render() {
 
     } else {
       if ((existinginstances == 0)) {
-        output = '<tr><th colspan="4"><b>No signups yet for this club.</b></th></tr>';
+        output = `<tr><th colspan="4"><b>No events created yet under this type.</b></th></tr>`;
         existinginstances += 1;
       }
     }
@@ -213,6 +217,7 @@ function render() {
 
 
 };
+
 
 render();
 

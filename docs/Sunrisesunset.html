@@ -158,12 +158,14 @@ p{
         }
         }
 
+        let datedata = "";
+
         function saveNotes(entries) {
         localStorage.setItem(KEY, JSON.stringify(entries));
         }   
 
 
-        let datedata = "";
+        //let datedata = "";
 
         document.getElementById('generate').onclick = function(event) { // generate the data
         const location= document.getElementById('location').value.trim();
@@ -269,21 +271,23 @@ p{
         }
         document.getElementById('save').onclick = function(event) {
 
-        let rawnotes = 
+        let rawnotes = loadNotes()
 
-        if (loadNotes()[loadNotes().length-1]){
+        if (localStorage.getItem("record") == "in"){
         const srss = document.getElementById('srss').value.trim();
-        const date = dateoutput;
+        const date = datedata;
         const datecreatedelement = new Date().toLocaleTimeString();
         const location = document.getElementById('location').value.trim();
         
-        let notes = loadNotes()[loadNotes().length-1].data;
+        let notes = rawnotes[rawnotes.length-1].data;
+        notes.push([srss, date, datecreatedelement, location])
         let package = {
-            user: loadNotes()[loadNotes().length-1].user,
-            password: loadNotes()[loadNotes().length-1].password,
-            data: notes.push([srss, date, datecreatedelement, location])
+            user: rawnotes[rawnotes.length-1].user,
+            password: rawnotes[rawnotes.length-1].password,
+            data: notes
         };
-        let finalpackage = loadNotes().push(package);
+        let finalpackage = loadNotes();
+        finalpackage.push(package);
         saveNotes(finalpackage);
 
         const dateelement = document.getElementById('dateelement');
@@ -292,7 +296,7 @@ p{
         locationelement.innerHTML = "Location: "; 
         }
         else {
-            alert("You are not logged in. Please log in to save or schedule events.")
+            alert("You are not logged in. Please log in or sign up to save or schedule events.")
         }
         
         }
