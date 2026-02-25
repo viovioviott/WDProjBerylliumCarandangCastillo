@@ -161,17 +161,21 @@ p{
         }
 
 
+        let datedata = "";
+
         document.getElementById('generate').onclick = function(event) { // generate the data
         const location= document.getElementById('location').value.trim();
         const date = document.getElementById('date').value.trim();
         const srss = document.getElementById('srss').value.trim();
 
-        let dateoutput = "Date:";
-
         const dateelement = document.getElementById('dateelement');
         dateelement.innerHTML = "Date: ";
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
+
+        let dateoutput = "Date:"; // dateoutput will be put to dateelement so that it can appear
+        //after clicking generate, but then it also goes to date data so that it can also be
+        //saved by the SAVE function
         
         if (location == "Pyongyang"){
             if (date == "fri"){
@@ -252,17 +256,18 @@ p{
         dateelement.innerHTML += dateoutput;
         //const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML += location; 
+        datedata = dateoutput; // so that save would be able to get the data 
         
         }
         document.getElementById('reset').onclick = function(event) {
         const dateelement = document.getElementById('dateelement');
-        dateelement.innerHTML = "Date: ";
+        dateelement.innerHTML = "Date: "; 
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
         }
         document.getElementById('save').onclick = function(event) {
         const srss = document.getElementById('srss').value.trim();
-        const date = document.getElementById('date').value.trim();
+        const date = dateoutput;
         const datecreatedelement = new Date().toLocaleTimeString();
         const location = document.getElementById('location').value.trim();
         
