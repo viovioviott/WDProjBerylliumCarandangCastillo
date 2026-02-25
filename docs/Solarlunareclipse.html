@@ -141,37 +141,21 @@ p{
     </footer>
 
     <script>
-        function loadNotes() { // this is to load the data
+
         const KEY = "notes";
+        function loadNotes() { // this is to load the data
+        
         const raw = localStorage.getItem(KEY); 
+        if (raw) {
+        return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
+        } else {
+        return []; // if none, return a blank array
+        }
+        }
 
         function saveNotes(entries) {
         localStorage.setItem(KEY, JSON.stringify(entries));
         }       
-
-        if (raw) {
-        return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
-        } else {
-        return []; // if none, return a blank array
-        }
-        }
-
-
-        function loadNotes() { // this is to load the data
-        const KEY = "notes";
-        const raw = localStorage.getItem(KEY);  
-
-        if (raw) {
-        return JSON.parse(raw); // if there is saved data on the key "notes", parse and return it
-        } else {
-        return []; // if none, return a blank array
-        }
-        }
-
-        function saveNotes(entries) {
-        localStorage.setItem(KEY, JSON.stringify(entries));
-        }   
-
 
         let datedata = "";
 
@@ -242,12 +226,12 @@ p{
 
         if (localStorage.getItem("record") == "in"){
         const lunarsolar = document.getElementById('lunarsolar').value.trim();
-        const date = dateoutput;
+        const date = datedata;
         const datecreatedelement = new Date().toLocaleTimeString();
         const location = document.getElementById('location').value.trim();
         
         let notes = rawnotes[rawnotes.length-1].data;
-        notes.push([srss, date, datecreatedelement, location]);
+        notes.push([lunarsolar, date, datecreatedelement, location]);
         let package = {
             user: rawnotes[rawnotes.length-1].user,
             password: rawnotes[rawnotes.length-1].password,
@@ -270,5 +254,4 @@ p{
 
     </script>
 
-    <script src="signup.js"></script>
 </body>

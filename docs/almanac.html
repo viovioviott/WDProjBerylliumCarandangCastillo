@@ -63,6 +63,7 @@
     margin-bottom: 10px;
     border-radius: 25px; 
     float: right;
+    font-size: 0.5em;
 }
 select {
         width: 40em;
@@ -76,6 +77,29 @@ select {
         .drpdwnbutton {
     display: block;
 }
+#view {
+    margin-bottom: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 18px; 
+    font-size: 3em;
+    height: 3em;
+}
+.dropbtn {
+    border: 2px solid #ffffff;
+    background-image: linear-gradient(to bottom, #3f3a99, #29257c);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto;
+
+    color: white;
+    font-family: starborn;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
     </style>
 
     </header>
@@ -87,10 +111,12 @@ select {
     
 
     <aside>
+            <div id="view"><h2>Almanac Events</h2></div>
+            
             <div id="myDropdown" class="dropdown-content">
-                <a class="drpdwnbutton" href="Sunrisesunset.html" style="font-size:5em;">Sunrise/Sunset Times</a>
-                <a class="drpdwnbutton" href="Solarlunareclipse.html" style="font-size:5em;">Solar/Lunar Eclipses</a>
-                <a class="drpdwnbutton" href="Seasons.html" style="font-size:5em;">Season Equinox/Soltices</a>
+                <a class="myDropdown" href="Sunrisesunset.html" style="font-size:5em;">Sunrise/Sunset Times</a>
+                <a class="myDropdown" href="Solarlunareclipse.html" style="font-size:5em;">Solar/Lunar Eclipses</a>
+                <a class="myDropdown" href="Seasons.html" style="font-size:5em;">Season Equinox/Soltices</a>
             </div>
     </aside>
 
@@ -168,7 +194,7 @@ function render() {
   const notes = rawnotes.at(-1).data;
   const list = document.getElementById('list');
 
-  if ((localStorage.getItem("record") == "out")||(localStorage.getItem("record") == null)) { // if there are no current save data, display no notes yet
+  if ((localStorage.getItem("record") == "out")||(localStorage.getItem("record") != "in")) { // if there are no current save data, display no notes yet
     list.innerHTML = `<tr><th colspan="4"><b>Log in to access this feature.</b></th></tr>`;
     
   }

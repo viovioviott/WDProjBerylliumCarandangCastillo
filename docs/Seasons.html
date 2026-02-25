@@ -147,8 +147,9 @@
 
     <script>
 
-        function loadNotes() { // this is to load the data
         const KEY = "notes";
+        function loadNotes() { // this is to load the data
+        
         const raw = localStorage.getItem(KEY);  
 
         if (raw) {
@@ -162,6 +163,7 @@
         localStorage.setItem(KEY, JSON.stringify(entries));
         }   
 
+        let datedata = "";
 
         document.getElementById('generate').onclick = function(event) { // generate the data
         const year = document.getElementById('years').value.trim();
@@ -302,6 +304,7 @@
         dateelement.innerHTML += date;
         //const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML += location; 
+        datedata = date;
         
         }
         document.getElementById('reset').onclick = function(event) {
@@ -312,22 +315,26 @@
         }
         document.getElementById('save').onclick = function(event) {
 
-        if (loadNotes()[loadNotes().length-1]){
+        let rawnotes = loadNotes();
+
+        if (rawnotes[rawnotes.length-1]){
         const season = document.getElementById('season').value.trim();
-        const date = dateoutput;
+        const date = datedata;
         const datecreatedelement = new Date().toLocaleTimeString();
         const location = document.getElementById('location').value.trim();
         
-        let notes = loadNotes()[loadNotes().length-1].data;
+        let notes = rawnotes[rawnotes.length-1].data;
+        notes.push([season, date, datecreatedelement, location]);
         let package = {
-            user: loadNotes()[loadNotes().length-1].user,
+            user: rawnotes[rawnotes.length-1].user,
             password: loadNotes()[loadNotes().length-1].password,
-            data: notes.push([srss, date, datecreatedelement, location])
+            data: notes
         };
-        let finalpackage = loadNotes().push(package);
+        let finalpackage = loadNotes();
+        finalpackage.push(package);
         saveNotes(finalpackage);
 
-            const dateelement = document.getElementById('date');
+        const dateelement = document.getElementById('date');
         dateelement.innerHTML = "Date: ";
         const locationelement = document.getElementById('locationtext');
         locationelement.innerHTML = "Location: "; 
@@ -339,5 +346,4 @@
 
     </script>
 
-    <script src="signup.js"></script>
 </body>
