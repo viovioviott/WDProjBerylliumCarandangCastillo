@@ -31,31 +31,62 @@
             
             </div>  
         </nav>
+      </header>
+      <hr>
 
-    </header>
-
+    <div class="aside">
     <aside>
             <div id="view"><h2>Almanac Events</h2></div>
             
-            <div id="myDropdown" class="dropdown-content">
+            <div id="notDropdown" class="notDropdown-content">
                 <a class="myDropdown" href="Sunrisesunset.html" style="font-size:3em;">Sunrise/Sunset Times</a>
                 <a class="myDropdown" href="Solarlunareclipse.html" style="font-size:3em;">Solar/Lunar Eclipses</a>
                 <a class="myDropdown" href="Seasons.html" style="font-size:3em;">Season Equinox/Soltices</a>
             </div>
     </aside>
+</div>
 
+<div class="content">
     <label for="filter" id="title">Filter by Event</label> 
-        <select id="filter" name="filter">
-            <option value="All">All</option>
-            <option value="Sunrise">Sunrise</option>
-            <option value="Sunset">Sunset</option>
-            <option value="Solar Eclipse">Solar Eclipse</option>
-            <option value="Lunar Eclipse">Lunar Eclipse</option>
-            <option value="Spring Equinox">Spring Equinox</option>
-            <option value="Summer Solstice">Summer Solstice</option>
-            <option value="Autumn Equinox">Autumn Equinox</option>
-            <option value="Winter Solstice">Winter Solstice</option>
-        </select>
+    <button onclick="myFunction()" class="dropbtn">Filter</button>
+    <div id="myDropdown" class="dropdown-content" >
+        <input type="text" placeholder="Search.." id="myInput" class="drpdwnbutton" class="searchbar" onkeyup="filterFunction()">
+        <a class="drpdwnbutton" value="Sunset">All</a>
+        <a class="drpdwnbutton" value="Sunset">Sunset</a>
+        <a class="drpdwnbutton" value="Solar Eclipse">Solar Eclipse</a>
+        <a class="drpdwnbutton" value="Lunar Eclipse">Lunar Eclipse</a>
+        <a class="drpdwnbutton" value="Spring Equinox">Spring Equinox</a>
+        <a class="drpdwnbutton" value="Summer Solstice">Summer Solstice</a>
+        <a class="drpdwnbutton" value="Autumn Equinox">Autumn Equinox</a>
+        <a class="drpdwnbutton" value="Winter Solstice">Winter Solstice</a>
+
+        </div>
+    </div>
+
+            <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show"); //toggles visibility
+        }
+
+        function filterFunction() {
+            const input = document.getElementById("myInput"); // checks input
+            const filter = input.value.toUpperCase(); // makes the input case sensitve
+            const div = document.getElementById("myDropdown"); // acesses the dropboxes
+            const a = div.getElementsByTagName("a");
+                for (let i = 0; i < a.length; i++) { // circles through the item list
+                    txtValue = a[i].textContent || a[i].innerText; // compares the input to the list elements
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        a[i].style.display = "";
+                        } else {
+                        a[i].style.display = "none";
+                        }
+                }
+        }
+
+    </script>
+        
+
+
     <br> <br>
     <label for="arrange" id="title">Arrange By</label> 
         <select id="arrange" name="arrange">
@@ -69,10 +100,11 @@
           <th colspan="4"><b></b></th>
         </tr>
     </table>
-    
+  </div>
     
 
 
+    <hr>
     <footer>
         <div class="content">
             <p>2025-2026</p>
