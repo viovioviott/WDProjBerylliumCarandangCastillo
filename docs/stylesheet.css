@@ -18,6 +18,11 @@
     src: url(fonts/KGLoveMolly.ttf), format('truetype');
   }
 
+@font-face {
+    font-family: "simple"; 
+    src: url(fonts/SimpleHandmade.ttf), format('truetype');
+}
+
 h1, h2, h3, h4, h5, h6, p {
     color: white;
     margin: 5px;
@@ -69,23 +74,23 @@ header {
 
 #icon {
     float: left;
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
     margin: auto;
     margin-right: 10px;
 }
 
 .intro {
     float: left;
-    width: 30%;
-    height: 80px; 
+    width: 20%;
+    height: 50px; 
     align-items: center;
     text-align: left;
 }
 
 .nav {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 

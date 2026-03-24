@@ -1,0 +1,72 @@
+label {
+        font-family: starborn;
+        color: white;
+        font-size: 30px;
+        }
+
+    td, th{
+      border: 1px solid;
+    }
+
+    table{
+      border: 3px solid;
+      border-collapse: collapse;
+      padding: 20px;
+      text-align: left;
+      color: rgb(0, 0, 0);
+      background-color: rgb(100, 67, 223);
+      width: 50%;
+      font-size: 30px;
+    }
+
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    aside{ /* sets the design for the dropboxes */
+    border: 2px solid #ffffff;
+    background-image: linear-gradient(to bottom, #1d1a58, #08071b);
+    width: 20%;
+    min-height: 100vh;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px; 
+    float: right;
+    font-size: 0.5em;
+}
+
+select {
+        width: 40em;
+        font-size: 1em;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+        font-family: starborn;
+        }
+        .drpdwnbutton {
+    display: block;
+}
+
+#view {
+    margin-bottom: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 18px; 
+    font-size: 10px;
+    height: 3em;
+}
+
+.dropbtn {
+    border: 2px solid #ffffff;
+    background-image: linear-gradient(to bottom, #3f3a99, #29257c);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto;
+
+    color: white;
+    font-family: starborn;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}

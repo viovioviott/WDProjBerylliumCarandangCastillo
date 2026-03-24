@@ -21,14 +21,13 @@ aside#dropboxes { /* sets the design for the dropboxes */
     background-image: linear-gradient(to bottom, #1d1a58, #08071b);
     width: 45%;
     min-height: 100vh;
-    margin-right: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
+    padding: 10px;
     border-radius: 25px; 
 }
 
 #view {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     border: 2px solid #ffffff;
     border-radius: 18px; 
 
