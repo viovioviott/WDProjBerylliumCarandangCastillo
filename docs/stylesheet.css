@@ -82,10 +82,10 @@ header {
 
 .intro {
     float: left;
-    width: 20%;
     height: 50px; 
     align-items: center;
     text-align: left;
+    width: 20%;
 }
 
 .nav {
